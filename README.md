@@ -7,8 +7,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#cold-pitch-for-project-plushmark">Cold Pitch for the Project - PlushMark</a></li>
-        <li><a href="#developer's-bio">Developer's Bio</a></li>   
+        <li><a href="#cold-pitch-for-plushmark">Cold Pitch for the Project - PlushMark</a></li>
+        <li><a href="#developer-bio">Developer's Bio</a></li>   
         <li><a href="#technology-stack">Technology Stack</a></li>
       </ul>
     </li>
