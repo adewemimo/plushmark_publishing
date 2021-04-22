@@ -10,6 +10,7 @@ describe("BookContractFactory", () => {
     let bookContractFactory;
     //let bookContract;
     let receipt;
+    let buyer
 
 
 
@@ -34,7 +35,6 @@ describe("BookContractFactory", () => {
     })
 
     describe("test cases for createBookContract()",  () => {
-        //test case #1
         it("Should be able to get book Id and BookContract address and the contract creator", async () => {
 
             expect(receipt.events[0].args).to.have.property("creator");
@@ -42,18 +42,6 @@ describe("BookContractFactory", () => {
             expect(receipt.events[0].args).to.have.property("bookAddress");
         })
 
-                //test case #2
-        // it("Should make the caller of createBookContract() function to be owner of Book contract", async () => {
-  
-        //     const bookAddress = receipt.events[0].args["bookAddress"];
-        //     console.log(`bookAddress ${bookAddress}`);
-        //     const bookContract = BookContract.attach(bookAddress);
-        //     console.log(bookContract);
-        //     console.log(bookContract);
-        //     console.log(bookContract.owner());
-        //     console.log(bookContractCreator.address);
-        //     expect(await bookContract.owner()).to.equal(bookContractCreator.address)
-        // })
 
         it("Should not allow the factory owner to call createBookContract()", async () => {
             await expect(bookContractFactory.createBookContract(bookTitle, bookSymbol, published, hashString)).to.be.reverted;
@@ -77,7 +65,7 @@ describe("BookContractFactory", () => {
 
     })
 
-    describe("Test cases to createBookToken, buy token and claim rewards", async () => {
+    describe("Test cases to bookContract - createBookToken, buy token and claim rewards", async () => {
 
         it ("create book token and check the token owner", async() => {
             let price = "2000000000000000000";
@@ -90,13 +78,6 @@ describe("BookContractFactory", () => {
             expect(await SpecificBookContract.totalCount()).to.equal(1);
             expect(await SpecificBookContract.ownerOf(tokenID)).to.equal(bookContractCreator.address);
 
-            // expect(await SpecificBookContract.soldCount()).to.equal(0);
-
-            // await SpecificBookContract.connect(bookContractCreator).buyBook(tokenID, {value:"2000000000000000000"});
-
-            // expect(await SpecificBookContract.ownerOf(tokenID)).to.equal(buyer.address);
-
-            // expect(await SpecificBookContract.soldCount()).to.equal(1);
 
         })
 
@@ -105,7 +86,6 @@ describe("BookContractFactory", () => {
             // let price = "2000000000000000000";
             const SpecificBookAddress = receipt.events[0].args["bookAddress"];
             const SpecificBookContract = BookContract.attach(SpecificBookAddress);
-            // await SpecificBookContract.connect(bookContractCreator).createBookToken(price, author.getAddress());
 
             expect(await SpecificBookContract.soldCount()).to.equal(0);
 
@@ -128,23 +108,52 @@ describe("BookContractFactory", () => {
             let tokenID = 0;
             const withdrawedAmount = 2000000000000000000* (40/100);
             const oldBalance = await ethers.provider.getBalance(bookContractCreator.getAddress());
-            //console.log(`oldBalance: ${oldBalance}`);
             const gasPrice = await bookContractCreator.getGasPrice();
 
             const SpecificBookAddress = receipt.events[0].args["bookAddress"];
             const SpecificBookContract = BookContract.attach(SpecificBookAddress);
             const withdraw = await SpecificBookContract.connect(bookContractCreator).publisherClaim(bookContractCreator.getAddress(),tokenID);
             const tx = await withdraw.wait();
-            //console.log(tx);
             const transactionFee = (tx.gasUsed)*gasPrice;
-            //console.log(`transactionFee: ${transactionFee}`)
-            const expectedNewBalance = (oldBalance - transactionFee) + withdrawedAmount;
-            //console.log(`expectedNewBalance: ${expectedNewBalance}`);
+            const expectedNewBalance = (BigInt(oldBalance) - BigInt(transactionFee)) + BigInt(withdrawedAmount);
 
             const newBalance = await ethers.provider.getBalance(bookContractCreator.getAddress());
-            //console.log(`newBalance: ${newBalance}`);
 
-            expect((BigInt(newBalance)).toString()).to.equal(newBalance.toString());
+            expect((BigInt(newBalance)).toString()).to.equal(expectedNewBalance.toString());
         })
+
+        it("Author to claim ", async() => {
+            let tokenID = 0;
+            const authorWithdrawedAmount = 2000000000000000000* (50/100);
+            const oldAuthorBalance = await ethers.provider.getBalance(author.getAddress());
+            
+
+            const SpecificBookAddress = receipt.events[0].args["bookAddress"];
+            const SpecificBookContract = BookContract.attach(SpecificBookAddress);
+            const withdraw = await SpecificBookContract.connect(bookContractCreator).authorClaim(author.getAddress(), tokenID);
+            const tx = await withdraw.wait();
+            
+            const expectedNewBalance = BigInt(oldAuthorBalance) + BigInt(authorWithdrawedAmount);
+            const newAuthorBalance = await ethers.provider.getBalance(author.getAddress());
+            expect(newAuthorBalance.toString()).to.equal(expectedNewBalance.toString());
+        })
+
+        it("Marketplace Platform Owner to claim reward ", async() => {
+            let tokenID = 0;
+            const platformWithdrawedAmount = 2000000000000000000* (10/100);
+            const oldFactoryBalance = await ethers.provider.getBalance(bookContractFactoryOwner.getAddress());
+            const gasPrice = await bookContractFactoryOwner.getGasPrice();
+
+            const SpecificBookAddress = receipt.events[0].args["bookAddress"];
+            const SpecificBookContract = BookContract.attach(SpecificBookAddress);
+            const withdraw = await SpecificBookContract.connect(bookContractFactoryOwner).withdrawContractBalance();
+            const tx = await withdraw.wait();
+            const transactionFee = (tx.gasUsed)*gasPrice;
+            const expectedNewBalance = (BigInt(oldFactoryBalance) - BigInt(transactionFee)) + BigInt(platformWithdrawedAmount);
+            const newFactoryBalance = await ethers.provider.getBalance(bookContractFactoryOwner.getAddress());
+            expect(newFactoryBalance.toString()).to.equal(expectedNewBalance.toString());
+        })
+
+
     })
 })

@@ -4,6 +4,7 @@
 pragma solidity 0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract BookContract is ERC721 {
@@ -125,7 +126,7 @@ contract BookContract is ERC721 {
     }
 
     function withdrawContractBalance() public payable {
-        require(!lock);
+        require(!lock, "re-entrancy attack");
         lock = true;
         require(bookFactory.send(address(this).balance));
         lock = false;
