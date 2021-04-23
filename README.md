@@ -111,7 +111,7 @@ The following user stories are considered to be implemented in the PlushMark Pub
 ### UseCase Diagram
 <p align="center">
   <a href="https://github.com/adewemimo/plushmark_publishing">
-    <img src="Documentation/Publishing Marketplace - Use Case Diagram.png" alt="PlushMark UseCase Diagram" width="80" height="80">
+    <img src="Documentation/Publishing Marketplace - Use Case Diagram.png" alt="PlushMark UseCase Diagram" width="150" height="150">
   </a>
   <p align="center">
 
