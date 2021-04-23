@@ -132,10 +132,9 @@ The following user stories are considered to be implemented in the PlushMark Pub
 ### Smart Contract Specifications>
 
 #### BookContractFactory
-| Function Name           	|Function Visibility     	| Function Mutability      	| Modifiers                            	| Parameters                                	| Action - Notes|
-|-------------------------	|----------------------------------------------------------------------	|--------------	|-----------------------------------	|----------------------------------------------	||----------------------------------------------	|
-| createBookContract   	| external  	| N/A       	| NotTheOwner	| string memory _bookTitle <br> string memory _bookSymbol <br> bool _published <br> string memory _hashString <br>| creates the book contract <br> Keep track of the contract created <br> Notify about the creation of a book contract <br> Returns address of contract created and BookID
-|
+| Function Name           	|Function Visibility     	| Function Mutability      	| Modifiers                           | Parameters.     | Action - Notes|
+|-------------------------	|-----------------------	|--------------------------	|-----------------------------------	|-----------------|---------------|
+| createBookContract   	    | external  	            | N/A       	              | NotTheOwner	             | string memory _bookTitle <br> string memory _bookSymbol <br> bool _published <br> string memory _hashString <br>| creates the book contract <br> Keep track of the contract created <br> Notify about the creation of a book contract <br> Returns address of contract created and BookID|
 
 #### BookContract
 | Function Name           	|Function Visibility     	| Function Mutability      	| Modifiers                            	| Parameters                                	| Action - Notes|
