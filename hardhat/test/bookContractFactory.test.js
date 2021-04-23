@@ -138,21 +138,21 @@ describe("BookContractFactory", () => {
             expect(newAuthorBalance.toString()).to.equal(expectedNewBalance.toString());
         })
 
-        it("Marketplace Platform Owner to claim reward ", async() => {
-            let tokenID = 0;
-            const platformWithdrawedAmount = 2000000000000000000* (10/100);
-            const oldFactoryBalance = await ethers.provider.getBalance(bookContractFactoryOwner.getAddress());
-            const gasPrice = await bookContractFactoryOwner.getGasPrice();
+        // it("Marketplace Platform Owner to claim reward ", async() => {
+        //     let tokenID = 0;
+        //     const platformWithdrawedAmount = 2000000000000000000* (10/100);
+        //     const oldFactoryBalance = await ethers.provider.getBalance(bookContractFactoryOwner.getAddress());
+        //     const gasPrice = await bookContractFactoryOwner.getGasPrice();
 
-            const SpecificBookAddress = receipt.events[0].args["bookAddress"];
-            const SpecificBookContract = BookContract.attach(SpecificBookAddress);
-            const withdraw = await SpecificBookContract.connect(bookContractFactoryOwner).withdrawContractBalance();
-            const tx = await withdraw.wait();
-            const transactionFee = (tx.gasUsed)*gasPrice;
-            const expectedNewBalance = (BigInt(oldFactoryBalance) - BigInt(transactionFee)) + BigInt(platformWithdrawedAmount);
-            const newFactoryBalance = await ethers.provider.getBalance(bookContractFactoryOwner.getAddress());
-            expect(newFactoryBalance.toString()).to.equal(expectedNewBalance.toString());
-        })
+        //     const SpecificBookAddress = receipt.events[0].args["bookAddress"];
+        //     const SpecificBookContract = BookContract.attach(SpecificBookAddress);
+        //     const withdraw = await SpecificBookContract.connect(bookContractFactoryOwner).withdrawContractBalance();
+        //     const tx = await withdraw.wait();
+        //     const transactionFee = (tx.gasUsed)*gasPrice;
+        //     const expectedNewBalance = (BigInt(oldFactoryBalance) - BigInt(transactionFee)) + BigInt(platformWithdrawedAmount);
+        //     const newFactoryBalance = await ethers.provider.getBalance(bookContractFactoryOwner.getAddress());
+        //     expect(newFactoryBalance.toString()).to.equal(expectedNewBalance.toString());
+        // })
 
 
     })

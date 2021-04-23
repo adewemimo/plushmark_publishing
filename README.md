@@ -22,6 +22,7 @@
         <li><a href="#sequence-diagram">Sequence Diagram</a></li>
         <li><a href="#case-diagram">Case Diagram</a></li>
         <li><a href="#smartcontract-specifications">Smart Contract Specifications</a></li>
+        <li><a href="#mockup">DApp Mockup</a></li>
       </ul>
     </li>
     <li>
@@ -46,7 +47,7 @@
   </ol>
 </details>
 
-
+<---- ABOUT THE PROJECT -->
 ## ABOUT THE PROJECT
 ### Cold Pitch for Project - PlushMark
 PlushMark Publishing is a decentralized  borderless peer-to-peer publishing platform that would serve as a level playing ground for writers and would encourage interactions among publishers, authors, translators, editors and reader. It would also provide a mechanism for copyright and licensing of authors' works especially the best ones. Essentially, it is a marketplace for publishers, authors and any interested parties. 
@@ -67,6 +68,12 @@ Seun Soetan is a blockchain software developer. She also possessed more than fiv
 Publishers and authors have difficulties in managing copyrights of the books published and intellectual properties. Authors are looking for avenues where their work is easily assessable to others and, they can collaborate with other actors(publishers, editors, translators, e.t.c) in the industry when needed to have a successful book launch. Also, authors who want to publish their work without the publishers currently find it difficult to do so because of the lack of a platform to facilitate independent publishing. Publishers are looking for ways to generate more revenue in the sales of their published books for example bestsellers with additional features like author’s signatures, celebrity signature and/or some forms of art included in the book to make limited collectibles or editions. In the resales of books(secondary market) by readers, both authors and publishers are looking to get rewarded from the sales of these books which would limit the negative impacts of these secondary markets on the direct sales of their own books (primary market).
 
 ### Why Blockchain?
+Blockchain technology is considered for this project because there is need for open collaboration, allow as much people that interested to join the marketplace. This technology also allows for transparency, tracking and rightful claim to work. Ethereum will serve as the underlying platform upon which this DApp will be built. To be more specific, these are ways in which blockchain would be utilized for the implementation of the project:
+* token will be created for each digital copy of book in circulation. This can then be traced as the token is transferred to reader/buyer of a copy.  
+* Bestsellers can be converted to collectibles and tokenized with limited edition only in circulation. This can serve as another form of revenue generation for both the author and the publisher. 
+* A decentralized marketplace that allows for easy accessibility of the publishers to authors work for licensing is possible with the blockchain technology. This would also create interaction and collaboratio among readers, authors, publisher, translators and other actors in the publishing industry.
+* Since the token can be traced, change of ownership (reselling) of the token is possible. Rules can be inserted into the smart contract to allow for authors and publishers to have a cut of the amount gotten from the re-transfer of ownership.
+
 
 ### Benefits
 * Generate new revenue
@@ -98,6 +105,20 @@ The following user stories are considered to be implemented in the PlushMark Pub
 * As a reader, I should be able to transfer ownership of token so I can resell. 
 * As an author or a publisher, I should be able to get a percentage from the re-transfer of token. 
 * The DApp should be able to list all book contracts created on the platform.
+
+<---- SYSTEM ARCHITECTURES -->
+## SYSTEM ARCHITECTURE AND SPECIFICATION
+### UseCase Diagram
+<p align="center">
+  <a href="https://github.com/adewemimo/plushmark_publishing">
+    <img src="Documentation/Publishing Marketplace - Use Case Diagram.png" alt="PlushMark UseCase Diagram" width="80" height="80">
+  </a>
+  <p align="center">
+
+### Sequence Diagram
+### Case Diagram
+### Smart Contract Specifications>
+### DApp Mockup
 
 
 ## Components and Installation
