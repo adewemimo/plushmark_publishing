@@ -40,7 +40,6 @@
         <li><a href="#market-opportunity">Market Opportunity and ROI</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#acknowledgements">Acknowledgements</a></li>
       </ul>
     </li>
   </ol>
@@ -138,13 +137,13 @@ The following user stories are considered to be implemented in the PlushMark Pub
 #### BookContract
 | Function Name           	|Function Visibility     	| Function Mutability      	| Modifiers       | Parameters                | Action - Notes                |
 |-------------------------	|-----------------------	|--------------------------	|----------------	|---------------------------|-------------------------------|
-| constructor 	            | N/A   	                | N/A       	              | N/A 	          | string memory _bookTitle_ <br> string memory _bookSymbol_ <br> bool _published_ <br>  | set the published status <br> stores the address of the factory owner <br> initialize the name and symbol for book Token <br>|
-| createBookToken 	        | public  	              | N/A       	              | N/A 	          | uint256 _price <br> address _author | verifies that published is set to true to allow for Token to be created <br> keep count of the token (book copies) created <br> saves the details (unique identifier,price, tokenholder, publisher, author, soldStatus) of token created <br> mint token|
+| constructor 	            | N/A   	                | N/A       	              | N/A 	          | - string memory _bookTitle_ <br> - string memory _bookSymbol_ <br> - bool _published_ <br>  | - Set the published status <br> - Stores the address of the factory owner <br> - Initialize the name and symbol for book Token <br>|
+| createBookToken 	        | public  	              | N/A       	              | N/A 	          | - uint256 _price <br> - address _author | - Verifies that published is set to true to allow for Token to be created <br> - Keep count of the token (book copies) created <br> - Saves the details (unique identifier,price, tokenholder, publisher, author, soldStatus) of token created <br> - Mint token|
 | setPublishedState 	      | public                	| N/A                      	| onlyOwner(_tokenId)| bool publishedState   | set the state for published to true or false. If false, tokens cannot be minted for that book|
-| buyBook	                  | public  	              | payable       	          | N/A 	          | uint256 _tokenId         | function is to buy token i.e. pay for a token <br> checks that the amount sent is greater than the price set for the book <br> Returns difference back if amount is sent to contract is more <br> Handles the reward distribution mechanism and saves to storage <br> Keep count of the number of token sold|
-| transferBookToken 	      | public                	| N/A                     	| N/A            	| address buyer <br> uint _tokenId | transfer token to the buyer <br> changes the tokenHolder in struct BookCopy to the new owner |
-| authorClaim	              | public                	| payable                 	| N/A           	| address payable author <br> uint256 _tokenId | allows author to claim reward |
-| publisherClaim	          | public  	             | payable                  	| N/A           	| address payable publisher <br> uint256 _tokenId | allow publisher to claim reward |
+| buyBook	                  | public  	              | payable       	          | N/A 	          | uint256 _tokenId         | - function is to buy token i.e. pay for a token <br> - Checks that the amount sent is greater than the price set for the book <br> - Returns difference back if amount is sent to contract is more <br> - Handles the reward distribution mechanism and saves to storage <br> - Keep count of the number of token sold|
+| transferBookToken 	      | public                	| N/A                     	| N/A            	| address buyer <br> - uint _tokenId | - Transfer token to the buyer <br> - Changes the tokenHolder in struct BookCopy to the new owner |
+| authorClaim	              | public                	| payable                 	| N/A           	| - address payable author <br> - uint256 _tokenId | allows author to claim reward |
+| publisherClaim	          | public  	             | payable                  	| N/A           	| - address payable publisher <br> - uint256 _tokenId | allow publisher to claim reward |
 | withdrawContractBalance   | public  	             | payable                  	| N/A  	          | N/A                     | allow to Factory owner (marketplace) to claim reward |
 
 
@@ -224,12 +223,23 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 <!--Additional Documentation-->
 ## ADDITIONAL DOCUMENTATION
 ### Project Presentation Deck
-link to slide: [Capstone Presentation Slide](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/PlushMark%20Mockup-SequencePlay.mov)
+link to slide: [Capstone Presentation Slide](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/_PlushMark%20Publishing%20-%20CapStone%20Project%20Presentation.pdf)
+
 ### Competitive Feature Matrix
+Detailed competitive feature Matrix of PlushMark and other blockchain based and non-blockchain based solution: 
+[Competitive Feature Matrix](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/Competitive%20Features%20Matrix.pdf)
+
 ### Market Opportunity and ROI
+Click link for Details: [Market Opportunity](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/MARKET%20RESEARCH%20REPORT.pdf)
+
 ### Resume
+
 ### Contact
-### Acknowledgements
+LinkedIn: 
+GitHub:
+Email: sesoetan@gmail.com | oluwaseun.soetan@georgebrown.ca 
+
+
 
 
 
