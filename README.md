@@ -235,7 +235,7 @@ Click link for Details: [Market Opportunity](https://github.com/adewemimo/plushm
 ### Resume
 Click to navigate and access resume [Resume](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/Seun%20Soetan%20Resume%20-%20Blockchain%20Full-Stack%20Developer.pdf)
 ### Contact
-LinkedIn: https://www.linkedin.com/in/seunsoetan/
-GitHub: https://github.com/adewemimo
-Email: sesoetan@gmail.com | oluwaseun.soetan@georgebrown.ca 
+* LinkedIn: https://www.linkedin.com/in/seunsoetan/
+* GitHub: https://github.com/adewemimo
+* Email: sesoetan@gmail.com | oluwaseun.soetan@georgebrown.ca 
 
