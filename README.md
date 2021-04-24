@@ -29,8 +29,7 @@
       <a href="#components-installation">Components and Installation</a>
       <ul>
         <li><a href="#technology-stack">PlushMark DApp Components and Technology Stack</a></li>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#getting-started">Setting up and Running the Project</a></li>
       </ul>
     </li>
     <li>
@@ -169,58 +168,78 @@ The following user stories are considered to be implemented in the PlushMark Pub
 #### Mockup Sequence Play
 [Mockup Sequence Play](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/PlushMark%20Mockup-SequencePlay.mov)
 
-
-## Components and Installation
+<!-- Components and Installation-->
+## COMPONENTS AND INSTALLATION
 ### PlushMark DApp Components and Technology Stack
 
 * Contract Factory that creates the book smart contracts and defines the basic structure of the contracts
 * Smart contracts that implement ERC721 Non-Fungible (book) Tokens using Hardhat, and solidity programming language
 * A web frontend using next.js
-* Ethers library to connect to Ethereum chains (via Metamask)
+* Ethers.js library to connect to Ethereum chains (via Metamask)
 * an IPFS connection to upload book to get the hash for use in creating the smart contract. 
 
+The Technology Stack and Tools utilized in development this project includes:
+* Hardhat
+* Next.js
+* Solidity
+* Javascript / Typescript
+* Visual Studio Code
+* MetaMask
 
 
-
-
-
-
-
-
-
-
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+### Setting up and Running the Project
+To run this project:
+* Clone the GitHub Repository: 
 ```
+https://github.com/adewemimo/plushmark_publishing.git
+```
+* Naviagte to the hardhat folder in terminal to run the smart contract:
+    * Start local chain network:
+    ```
+    npx hardhat node
+    ``` 
+    * compile and deploy project:
+    ```
+    npx hardhat compile 
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```
+    npx hardhat run scripts/deploy.js --network localhost  
+    ```
+    * import accounts to metamask by using the import Account on Metamask once you are logged in and selected localhost:8545 to connect to hardhat node.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* navigate to the next.js folder in the terminal and run the code below to have access to the frontend
+```
+npm run dev
+```
+* Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+<!--Additional Documentation-->
+## ADDITIONAL DOCUMENTATION
+### Project Presentation Deck
+link to slide: [Capstone Presentation Slide](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/PlushMark%20Mockup-SequencePlay.mov)
+### Competitive Feature Matrix
+### Market Opportunity and ROI
+### Resume
+### Contact
+### Acknowledgements
+
+
+
+
+
+
+
+
+
+
+
+
+
