@@ -165,7 +165,7 @@ The following user stories are considered to be implemented in the PlushMark Pub
 </p >
 
 #### Mockup Sequence Play
-[Mockup Sequence Play](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/PlushMark%20-%20MockupSequencePlay.m4v)
+![Mockup Sequence Play](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/PlushMark%20-%20MockupSequencePlay.m4v)
 
 <!-- Components and Installation-->
 ## COMPONENTS AND INSTALLATION
