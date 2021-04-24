@@ -233,23 +233,9 @@ Detailed competitive feature Matrix of PlushMark and other blockchain based and 
 Click link for Details: [Market Opportunity](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/MARKET%20RESEARCH%20REPORT.pdf)
 
 ### Resume
-
+Click to navigate and access resume [Resume](https://github.com/adewemimo/plushmark_publishing/blob/main/Documentation/Seun%20Soetan%20Resume%20-%20Blockchain%20Full-Stack%20Developer.pdf)
 ### Contact
-LinkedIn: 
-GitHub:
+LinkedIn: https://www.linkedin.com/in/seunsoetan/
+GitHub: https://github.com/adewemimo
 Email: sesoetan@gmail.com | oluwaseun.soetan@georgebrown.ca 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
